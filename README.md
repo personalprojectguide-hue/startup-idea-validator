@@ -1,72 +1,33 @@
 # Startup Idea Validator
-
-> Reality-check your idea in 2 minutes
-
----
-
-## ⚡ Get running in 5 minutes
-
-### Step 1 — Get a free Groq API key
-1. Go to **https://console.groq.com**
-2. Sign up (free, no credit card)
-3. Click **API Keys** → **Create API Key**
-4. Copy the key (starts with `gsk_...`)
-
-### Step 2 — Set up the project
-
-Open your terminal in this folder and run these commands **one at a time**:
-
-```bash
-# Create a virtual environment (keeps things tidy)
-python -m venv venv
-
-# Activate it
-# On Mac/Linux:
-source venv/bin/activate
-# On Windows:
-venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Step 3 — Add your API key
-
-1. Find the file called `.env.example` in this folder
-2. **Rename it** to `.env`  (remove the `.example` part)
-3. Open `.env` in any text editor
-4. Replace `your_groq_key_here` with the key you copied in Step 1
-
-It should look like this:
-```
-GROQ_API_KEY=gsk_abc123...your_actual_key
-```
-
-### Step 4 — Run it
-
-```bash
-uvicorn main:app --reload
-```
-
-Then open your browser and go to: **http://localhost:8000**
+Reality-check your idea in 2 minutes
 
 ---
 
-## Stopping the app
+## Setup
 
-Press `Ctrl + C` in your terminal.
+**1. Install dependencies**
 
-## Starting it again later
+Open your terminal, navigate to this folder, and run:
 
-```bash
-# Activate your virtual environment first
-source venv/bin/activate   # Mac/Linux
-venv\Scripts\activate      # Windows
+Mac / Linux:
 
-# Then run
-uvicorn main:app --reload
-```
+    python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
+
+Windows:
+
+    python -m venv venv && .\venv\Scripts\activate && pip install -r requirements.txt
+
+**2. Start the app**
+
+    uvicorn main:app --reload
+
+Then open http://localhost:8000 in your browser.
+
+**3. Enter your API key**
+
+The app will ask for your Groq API key on first run.
+Get a free key at https://console.groq.com
 
 ---
 
-Built with [Launchpad](https://launchpad.app) · Powered by [Groq](https://console.groq.com)
+Built with Deplo · Powered by Groq
